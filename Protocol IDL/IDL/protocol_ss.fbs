@@ -1,0 +1,109 @@
+
+namespace ProtocolSS;
+
+// 에러 코드
+enum ErrorCode : int {
+    OK = 0,
+    UNEXPECTED = 1, // 예외 상황 발생
+    DATABASE_FAILED = 2, // DB 쿼리 실패
+    INVALID_SESSION = 10,   // 잘못된 세션
+    INVALID_STRING = 20,    // 잘못된 문자
+    LOGIN_CONNECTION_FAILED = 100,
+    LOGIN_ALREADY_CONNECTED = 101, // 이미 로그인됨
+    LOGIN_NAME_DUPLICATION = 102,  // 중복된 이름
+    VERIFY_CREDENTIAL_FAILED = 103,
+}
+
+table TestMessage {
+    str_msg:string;
+}
+
+// 로그인 하지 않은 유저가 로그인이 선결되어야 하는 요청을 했을때 보내는 경고
+table Notify_UnauthedAccess {
+}
+
+// Authentication ===================================
+// 하위 서버의 로그인
+table Request_Login {
+    client_name:string;
+    client_type:int;
+}
+// 로그인 결과
+table Reply_Login {
+    error_code:ErrorCode;
+    session_id:int;
+}
+
+// 새 인증키를 만든다
+table Request_GenerateCredential {
+    session_id:int;
+    account_uid:int;
+}
+table Reply_GenerateCredential {
+    session_id:int;
+    credential:string;
+}
+// 인증키가 맞는지 확인
+table Request_VerifyCredential {
+    session_id:int;
+    credential:string;
+}
+table Reply_VerifyCredential {
+    error_code:ErrorCode;
+    session_id:int;
+    credential:string;
+    account_uid:int;
+}
+// 인증키가 제거됨 통보
+//table Notify_RemoveCredential {
+//    credential:string;
+//}
+
+// 유저 로그아웃
+table Notify_UserLogout {
+    account_uid:int;
+}
+// 서버 정보
+table ServerInfo {
+    session_id:int;
+    name:string;
+    type:int;
+}
+// 서버 리스트 통보
+table Notify_ServerList {
+    server_list:[ServerInfo];
+}
+
+namespace ProtocolSS;
+
+// 메시지 타입을 정의 한다 ================================================
+union MessageType {
+    RelayMessage,
+    TestMessage,
+    Notify_UnauthedAccess,
+    Request_Login,
+    Reply_Login,
+    Request_GenerateCredential,
+    Reply_GenerateCredential,
+    Request_VerifyCredential,
+    Reply_VerifyCredential,
+    //Manager.Notify_RemoveCredential,
+    Notify_UserLogout,
+    Notify_ServerList,
+}
+
+// Relay Message ===================================
+table RelayMessage {
+    source_id:int;
+    destinations_id:[int];
+    message:MessageType;
+}
+
+// 기본 네트워크 메시지 =================================================================
+table MessageRoot {
+    message:MessageType; // Union
+}
+
+root_type MessageRoot;
+
+file_identifier "PTSS";

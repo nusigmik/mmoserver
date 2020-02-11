@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Server">
+      <UniqueIdentifier>{9a510333-9773-4f47-ac68-23cf54570455}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{99ab8221-5f2a-49b9-b0ac-d745b48e1669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Protocol">
+      <UniqueIdentifier>{30e869ee-8f3f-41dc-9e81-5c2020e0c0be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{837d0517-62cb-4a9f-9039-8ea0f1442f78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{ff2f674a-c576-45ef-ad94-d9de33c73aa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameWorld">
+      <UniqueIdentifier>{1e071ee7-0bde-46c4-8395-63db56bccce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameWorld\Actor">
+      <UniqueIdentifier>{a96a5743-8ef6-4571-b994-6fb316528514}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\Login Server">
+      <UniqueIdentifier>{d19222a1-381f-47e3-86e1-65b3daa972a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\Manager Server">
+      <UniqueIdentifier>{37224581-8778-4c72-83a1-3648a967b39a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\Manager Server\Client">
+      <UniqueIdentifier>{5678a30c-5c70-4f00-8b3a-d3478b7a155c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\World Server">
+      <UniqueIdentifier>{9141cba4-b8a1-44db-b2c7-68a0eb5cb5eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameWorld\Zone">
+      <UniqueIdentifier>{18be0341-5b0c-423f-ba8e-d767ddc75628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameWorld\Monster">
+      <UniqueIdentifier>{66444a30-8280-44eb-8453-bedc97f214c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameWorld\Hero">
+      <UniqueIdentifier>{a4a97398-d07e-473b-ab14-32c6b759f65e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Singleton.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="MySQL.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="DBSchema.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol_ss_helper.h">
+      <Filter>Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoteLoginClient.h">
+      <Filter>Server\Login Server</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoteClient.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoteWorldClient.h">
+      <Filter>Server\World Server</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginServer.h">
+      <Filter>Server\Login Server</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol_cs_helper.h">
+      <Filter>Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="ManagerClient.h">
+      <Filter>Server\Manager Server\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="IServer.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldServer.h">
+      <Filter>Server\World Server</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>GameWorld\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundingBox.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="CachedResources.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeDef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="Zone.h">
+      <Filter>GameWorld\Zone</Filter>
+    </ClInclude>
+    <ClInclude Include="InterestArea.h">
+      <Filter>GameWorld\Zone</Filter>
+    </ClInclude>
+    <ClInclude Include="ZoneCell.h">
+      <Filter>GameWorld\Zone</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientInterestArea.h">
+      <Filter>GameWorld\Zone</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>GameWorld\Hero</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>GameWorld\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="ILivingEntity.h">
+      <Filter>GameWorld\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="ManagerServer.h">
+      <Filter>Server\Manager Server</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterSpawner.h">
+      <Filter>GameWorld\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterAI.h">
+      <Filter>GameWorld\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="InstanceZone.h">
+      <Filter>GameWorld\Zone</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ManagerServer.cpp">
+      <Filter>Server\Manager Server</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginServer.cpp">
+      <Filter>Server\Login Server</Filter>
+    </ClCompile>
+    <ClCompile Include="ManagerClient.cpp">
+      <Filter>Server\Manager Server\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldServer.cpp">
+      <Filter>Server\World Server</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoteWorldClient.cpp">
+      <Filter>Server\World Server</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="Zone.cpp">
+      <Filter>GameWorld\Zone</Filter>
+    </ClCompile>
+    <ClCompile Include="InterestArea.cpp">
+      <Filter>GameWorld\Zone</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>GameWorld\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientInterestArea.cpp">
+      <Filter>GameWorld\Zone</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>GameWorld\Hero</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>GameWorld\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterSpawner.cpp">
+      <Filter>GameWorld\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceZone.cpp">
+      <Filter>GameWorld\Zone</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterAI.cpp">
+      <Filter>GameWorld\Monster</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
